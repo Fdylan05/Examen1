@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/Eventos.css"/>
+        <link rel="stylesheet" href="css/Crear.css"/>
     </head>
     <body>
-        <div></div>
+        <div class="container">
+            <form th:object = "${evento}"
+                  th:action="@{/save}"
+                  method="POST"
+                  >
+                <div class="form-group-row">
+                    <label for="artista">Artista</label>
+                    <input type="text" th:field="*{artista}" placeholder= "Id Artista" id="artista" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="costo_evento">Costo</label>
+                    <input type="text" th:field="*{costo_evento}" placeholder= "Costo Evento" id="costo_evento" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="fecha">Fecha</label>
+                    <input type="text" th:field="*{fecha}" placeholder= "Fecha evento" id="fecha" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="MAX_CAPACIDAD">Capacidad Maxima</label>
+                    <input type="text" th:field="*{MAX_CAPACIDAD}" placeholder= "Capacidad Maxima" id="MAX_CAPACIDAD" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group-row">
+                    <label for="lugar">Lugar</label>
+                    <input type="text" th:field="*{lugar}" placeholder= "Lugar Evento" id="lugar" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+            </form>
+        </div>
     </body>
 </html>
